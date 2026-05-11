@@ -1,3 +1,5 @@
-scenarios_path: data/sample/scenarios.jsonl
+scenarios_path:
+  - data/sample/scenarios.jsonl
+  - data/sample/scenarios_hidden.jsonl
 checkpointer: memory
 report_path: reports/lab_report.md

@@ -44,14 +44,29 @@ State stays lean and serializable. Scalar control fields are overwritten each st
 | S05_error | error | error | Yes | 2 | 0 |
 | S06_delete | risky | risky | Yes | 0 | 1 |
 | S07_dead_letter | error | error | Yes | 1 | 0 |
+| G01_simple | simple | simple | Yes | 0 | 0 |
+| G02_simple2 | simple | simple | Yes | 0 | 0 |
+| G03_tool | tool | tool | Yes | 0 | 0 |
+| G04_tool2 | tool | tool | Yes | 0 | 0 |
+| G05_tool3 | tool | tool | Yes | 0 | 0 |
+| G06_missing | missing_info | missing_info | Yes | 0 | 0 |
+| G07_missing2 | missing_info | missing_info | Yes | 0 | 0 |
+| G08_risky | risky | risky | Yes | 0 | 1 |
+| G09_risky2 | risky | risky | Yes | 0 | 1 |
+| G10_risky3 | risky | risky | Yes | 0 | 1 |
+| G11_risky4 | risky | risky | Yes | 0 | 1 |
+| G12_error | error | error | Yes | 2 | 0 |
+| G13_error2 | error | error | Yes | 2 | 0 |
+| G14_dead | error | error | Yes | 1 | 0 |
+| G15_mixed | risky | risky | Yes | 0 | 1 |
 
 ### Metrics summary
 
-- Total scenarios: 7
+- Total scenarios: 22
 - Success rate: 100.00%
-- Average nodes visited: 6.43
-- Total retries: 3
-- Total interrupts: 2
+- Average nodes visited: 6.55
+- Total retries: 8
+- Total interrupts: 7
 
 ## 5. Failure analysis
 

@@ -61,10 +61,12 @@ scenarios.jsonl  →  scenarios.py loads them  →  cli.py runs each through you
                                               →  outputs/metrics.json
 ```
 
-1. `make run-scenarios` reads `data/sample/scenarios.jsonl`
+1. `make run-scenarios` reads all scenario files from `configs/lab.yaml`.
 2. For each scenario, it calls `initial_state(scenario)` → `graph.invoke(state)`
 3. After execution, it checks: did `actual_route` match `expected_route`? Did HITL fire when required?
 4. Results go to `outputs/metrics.json`
+
+> Note: `scenarios_path` can be a single path or a list of paths, so hidden grading scenarios are included alongside sample scenarios.
 
 ### How to design your routing logic
 

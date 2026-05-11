@@ -8,8 +8,13 @@ from pathlib import Path
 from .state import Scenario
 
 
-def load_scenarios(path: str | Path) -> list[Scenario]:
+def load_scenarios(path: str | Path | list[str | Path]) -> list[Scenario]:
     scenarios: list[Scenario] = []
+    if isinstance(path, list):
+        for entry in path:
+            scenarios.extend(load_scenarios(entry))
+        return scenarios
+
     with Path(path).open("r", encoding="utf-8") as handle:
         for line_no, line in enumerate(handle, start=1):
             if not line.strip():

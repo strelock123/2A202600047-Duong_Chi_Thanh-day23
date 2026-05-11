@@ -14,3 +14,12 @@ def test_load_scenarios():
     scenarios = load_scenarios("data/sample/scenarios.jsonl")
     assert len(scenarios) >= 6
     assert {item.expected_route for item in scenarios} >= {Route.SIMPLE, Route.TOOL, Route.RISKY}
+
+
+def test_load_multiple_scenarios_files():
+    scenarios = load_scenarios([
+        "data/sample/scenarios.jsonl",
+        "data/sample/scenarios_hidden.jsonl",
+    ])
+    assert len(scenarios) >= 15
+    assert {item.expected_route for item in scenarios} >= {Route.SIMPLE, Route.TOOL, Route.RISKY, Route.MISSING_INFO, Route.ERROR}
